@@ -6,7 +6,9 @@ CineVibe
 
 
 Erick Vagner da Silva Vicentini - 2200515
+
 Guilherme Gimenez Araujo - 2100786
+
 Pedro Henrique Costa Souza - 2202159
 
 
