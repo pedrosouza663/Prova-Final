@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes e Séries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #ddd;
+            padding: 0.5em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        .movie {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .movie img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+		
+		label{
+
+			display: inline-block;
+			width: 90px;
+		}
+		
+		form {
+			color: #ffffff;
+		
+		}
+		
+		
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CineVibe</h1>
+    </header>
+
+    <nav>
+        <a href="index.html" id="filmes-link">Filmes</a>
+        <a href="pg2.html" id="series-link">Séries</a>
+		<a href="pg3.html" id="filmes-link">Sugestão de Filme</a>
+    </nav>
+
+    <center><h2><font color="white"><color>Sugestão de Filme</h2></center></font>
+
+	<center><form id="filmeForm">
+	  <label for="titulo"><h3>Título:</h3></label>
+	  <input type="text" id="titulo" name="titulo" required><br>
+
+	  <label for="diretor"><h3>Diretor:</h3></label>
+	  <input type="text" id="diretor" name="diretor" required><br>
+
+	  <label for="ano"><h3>Ano:</h3></label>
+	  <input type="date" id="ano" name="ano" required><br>
+	  
+	  </br>
+
+	  <button type="button" onclick="adicionarFilme()">Enviar</button>
+	</form></center>
+
+	<script>
+	  function adicionarFilme() {
+		var titulo = document.getElementById("titulo").value;
+		var diretor = document.getElementById("diretor").value;
+		var ano = document.getElementById("ano").value;
+
+		if (titulo && diretor && ano) {
+
+		  console.log("Filme adicionado:");
+		  console.log("Título: " + titulo);
+		  console.log("Diretor: " + diretor);
+		  console.log("Ano: " + ano);
+
+		  document.getElementById("filmeForm").reset();
+		} else {
+		  alert("Por favor, preencha todos os campos.");
+		}
+	  }
+	</script>
+
+    <script>
+        document.getElementById('filmes-link').addEventListener('click', function () {
+            document.getElementById('filmes-section').style.display = 'block';
+            document.getElementById('series-section').style.display = 'none';
+        });
+
+        document.getElementById('series-link').addEventListener('click', function () {
+            document.getElementById('filmes-section').style.display = 'none';
+            document.getElementById('series-section').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
